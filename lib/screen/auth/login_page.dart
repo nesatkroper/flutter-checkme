@@ -1,4 +1,5 @@
 import 'package:checkme/provider/api_service.dart';
+import 'package:checkme/screen/scanner/qr_scanner_page.dart';
 import 'package:checkme/screen/scanner/user_info.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -198,6 +199,35 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                             ),
                       SizedBox(height: 20),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => QRScannerPage()),
+                          );
+                        },
+                        child: Text(
+                          'Go to Scan',
+                          style: TextStyle(
+                            fontSize: 18.0, // Adjust the font size
+                            fontWeight: FontWeight.bold, // Make the text bold
+                            color: Colors.white, // Set the text color
+                          ),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              Colors.blue, // Set the button's background color
+                          foregroundColor: Colors
+                              .white, // Set the text color when the button is pressed
+                          disabledForegroundColor: Colors
+                              .grey, // Set the color when the button is disabled
+                          shadowColor: Colors.black, // Set the shadow color
+                          elevation: 8.0, // Set the elevation
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 40.0, vertical: 12.0), // Set padding
+                        ),
+                      ),
                     ],
                   ),
                 ),
